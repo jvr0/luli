@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+
+{% block title%}Home{%endblock%}
+
+{%block background%}{%load static%}{% static 'core/img/home-bg.jpg' %}{%endblock%}
+
+{%block headers%}
+<h1>La patrona de Buenos Aires</h1>
+<span class="subheading">30 Cumpleaños</span>
+{%endblock%}
+
+
+<!-- Contenido -->
+
+{% block content %}
+
+    <h1>Formulario</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+        
+{% endblock %}
