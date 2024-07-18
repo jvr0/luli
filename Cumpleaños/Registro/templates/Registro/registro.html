@@ -1,0 +1,29 @@
+{% extends "Registro/base.html" %}
+
+{% block title%}Home{%endblock%}
+
+{%block background%}{%load static%}{% static 'Registro/img/home-bg.jpg' %}{%endblock%}
+
+{%block headers%}
+<h1>Good Morning</h1>
+<span class="subheading">Aquí un mapa o algo guapo</span>
+{%endblock%}
+
+
+<!-- Contenido -->
+
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact Form</title>
+    </head>
+    <body>
+        <h1>!Apuntate¡</h1>
+        <form method="post" enctype="multipart/form-data">  <!-- Añade enctype -->
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Renderiza el formulario aquí -->
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+    </html>
+{% endblock %}
