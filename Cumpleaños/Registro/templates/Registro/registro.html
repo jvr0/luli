@@ -6,24 +6,87 @@
 
 {%block headers%}
 <h1>Good Morning</h1>
-<span class="subheading">Aquí un mapa o algo guapo</span>
-{%endblock%}
+<body>
+    <div id="countdown">
+        <div>
+            <span id="days"></span>
+            <div>Days</div>
+        </div>
+        <div>
+            <span id="hours"></span>
+            <div>Hours</div>
+        </div>
+        <div>
+            <span id="minutes"></span>
+            <div>Minutes</div>
+        </div>
+        <div>
+            <span id="seconds"></span>
+            <div>Seconds</div>
+        </div>
+    </div>
 
+    <script>
+        // Set the date we're counting down to
+        const countDownDate = new Date('August 30, 2024 00:00:00').getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the countdown date
+            const distance = countDownDate - now;
+            
+            // Calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result in the elements
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+            
+            // If the countdown is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('countdown').innerHTML = '<h2>¡Ya ha llegado!</h2>';
+            }
+        }, 1000);
+    </script>
+</body>
+{%endblock%}
 
 <!-- Contenido -->
 
 {% block content %}
-    <head>
-        <meta charset="UTF-8">
-        <title>Contact Form</title>
-    </head>
-    <body>
-        <h1>!Apuntate¡</h1>
-        <form method="post" enctype="multipart/form-data">  <!-- Añade enctype -->
-            {% csrf_token %}
-            {{ form.as_p }}  <!-- Renderiza el formulario aquí -->
-            <button type="submit">Enviar</button>
-        </form>
-    </body>
-    </html>
-{% endblock %}
+
+    <h1>Dirección</h1>
+        <body>
+            <img class="responsive-image" src="{% static 'Registro/img/mapa.png' %}" alt="Descripción de la imagen">
+            <div class="body-center">
+                <p><a href="https://maps.app.goo.gl/MLwrd6yaMU3pWGQJ9" target="_blank">Abrir en Google Maps</a></p>
+            </div>
+        </body>
+
+    <h1>Formulario</h1>
+        <body>
+            <form method="post" enctype="multipart/form-data">  <!-- Añade enctype -->
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Renderiza el formulario aquí -->
+                <button type="submit">Enviar</button>
+            </form>
+        </body>
+
+    <h1>Música</h1>
+        <body>
+            <div class="body-center">
+                <p><a href="https://open.spotify.com/playlist/5QbAA3XNyg10BZ9O6ZUXhX?si=4992d131f84744d2" target="_blank" style="color: #1DB954;">Spotify Playlist</a></p>
+            </div>
+        </body>
+
+
+    {% endblock %}
