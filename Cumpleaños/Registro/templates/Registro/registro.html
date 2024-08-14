@@ -5,24 +5,24 @@
 {%block background%}{%load static%}{% static 'Registro/img/home-bg.jpg' %}{%endblock%}
 
 {%block headers%}
-<h1>Good Morning</h1>
+<h1>Cumpleaños</h1>
 <body>
-    <div id="countdown">
+    <div id="countdown" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
         <div>
-            <span id="days"></span>
-            <div>Days</div>
+            <span id="days" style="display: block; text-align: center; font-size: 24px;"></span>
+            <div style="text-align: center;">Days</div>
         </div>
         <div>
-            <span id="hours"></span>
-            <div>Hours</div>
+            <span id="hours" style="display: block; text-align: center; font-size: 24px;"></span>
+            <div style="text-align: center;">Hours</div>
         </div>
         <div>
-            <span id="minutes"></span>
-            <div>Minutes</div>
+            <span id="minutes" style="display: block; text-align: center; font-size: 24px;"></span>
+            <div style="text-align: center;">Minutes</div>
         </div>
         <div>
-            <span id="seconds"></span>
-            <div>Seconds</div>
+            <span id="seconds" style="display: block; text-align: center; font-size: 24px;"></span>
+            <div style="text-align: center;">Seconds</div>
         </div>
     </div>
 
@@ -64,15 +64,15 @@
 
 {% block content %}
 
-    <h1>Dirección</h1>
+    <h1>Cómo llegar</h1>
         <body>
             <img class="responsive-image" src="{% static 'Registro/img/mapa_.png' %}" alt="Descripción de la imagen">
             <div class="body-center">
                 <p><a href="https://maps.app.goo.gl/5tMT9ofJWXEE9RCV7" target="_blank">Abrir en Google Maps</a></p>
             </div>
         </body>
-
-    <h1>Formulario</h1>
+        <br> </br>
+    <h1>Apuntate!</h1>
         <body>
             <form method="post" enctype="multipart/form-data">  <!-- Añade enctype -->
                 {% csrf_token %}
@@ -80,20 +80,12 @@
                 <button type="submit">Enviar</button>
             </form>
         </body>
+    <br> </br>
 
-    <h1>Música</h1>
-        <body>
-            <div class="body-center">
-                <p><a href="https://open.spotify.com/playlist/10A3FdLk1kKBzw6aqf8M5Z?si=166d0df01c1645c5" target="_blank" style="color: #1DB954;">Spotify Playlist</a></p>
-            </div>
-        </body>
+    <h1><a href="https://open.spotify.com/playlist/10A3FdLk1kKBzw6aqf8M5Z?si=166d0df01c1645c5" target="_blank" style="color: #1DB954; text-decoration: none;">Añade a la Playlist</a></h1>
+    <br> </br>
 
-    <h1>Fotos</h1>
-        <body>
-            <div class="body-center">
-                <p><a href="https://apps.apple.com/app/id660256196" target="_blank" style="color: #1DB954;">Iphone App</a></p>
-                <p><a href="https://apps.apple.com/app/id660256196" target="_blank" style="color: #1DB954;">Android App</a></p>
-            </div>
-        </body>
+    <h1><a href="https://www.wedshoots.com/" target="_blank" style="color: #E1306C; text-decoration: none;">Descarga la App de fotos</a></h1>
+    <br> </br>
 
     {% endblock %}
