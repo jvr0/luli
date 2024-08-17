@@ -4,4 +4,4 @@ from .models import Registro
 class RegistroForm(forms.ModelForm):
     class Meta:
         model = Registro
-        fields = ['name', 'tfn', 'imagen', 'asistentes']
+        fields = ['Nombre', 'Teléfono', 'Asistentes', 'Imágen', 'Notas']
