@@ -6,8 +6,8 @@ class Registro (models.Model):
 
     Nombre = models.CharField(max_length=100)
     Teléfono = models.CharField(max_length=15)
-    Asistentes = models.IntegerField()
-    Imágen = models.ImageField(upload_to='Registro', verbose_name='Sube tu foto preferida conmigo')
+    Edad = models.IntegerField()
+    Imágen = models.ImageField(upload_to='Registro', verbose_name='Subí tu foto preferida conmigo para el mural')
     Notas = models.CharField(max_length=100)
 
 
